@@ -2,10 +2,19 @@ import React from "react";
 import Todo from "./Todo";
 import { connect } from "react-redux";
 import { toggleComplete } from "../actions";
+import styled from "styled-components";
+
+const ToDoList = styled.div``;
+
+const List = styled.ul``;
+
 const TodoList = props => {
+  {
+    console.log(props.toggleComplete);
+  }
   return (
-    <div className="todoList">
-      <ul>
+    <ToDoList>
+      <List>
         {props.todos.map((item, index) => {
           return (
             <Todo
@@ -18,8 +27,8 @@ const TodoList = props => {
             />
           );
         })}
-      </ul>
-    </div>
+      </List>
+    </ToDoList>
   );
 };
 const mapStateToProps = state => {
